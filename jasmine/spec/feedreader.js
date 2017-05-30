@@ -102,14 +102,14 @@ $(function() {
           */
          it('loaded feed content changes', function(done) {
              //Feed variables to test
-             var firstFeed,
-                 secondFeed;
+             var checkFirstFeed,
+                 checkSecondFeed;
 
              loadFeed(0, function() {
-                 firstFeed = $('.feed').html();
+                 checkFirstFeed = $('.feed').html();
                  loadFeed(1, function() {
-                     secondFeed = $('.feed').html();
-                     expect(firstFeed).not.toEqual(secondFeed);
+                     checkSecondFeed = $('.feed').html();
+                     expect(checkFirstFeed).not.toEqual(checkSecondFeed);
                      done();
                  });
              });
